@@ -53,8 +53,8 @@ double pop(double *pstack, int *pcounter)
 
 void push(double *pstack, double line, int *pcounter)
 {
-		pstack[(*pcounter)] = line;
-		(*pcounter)++;//defirenciranje pointerja- prideš do vrednosti od pointer
+	pstack[(*pcounter)] = line;
+	(*pcounter)++;//deferencing pointer- get to value of pointer
 }
 
 void izpis(double *pstack, int counter)
@@ -91,56 +91,56 @@ void arithmetic_operation(double *stack, char *line, int *counter)
 		push(stack, (var1 + var2), counter);
 		return;
 	}
-    if ( strcmp(line,"-") == 0)
-    {
-	double var1 = pop(stack,counter);
-	double var2 = pop(stack,counter);
-	push(stack, (var2-var1), counter);
-	return;
-    }
+	if ( strcmp(line,"-") == 0)
+	{
+		double var1 = pop(stack,counter);
+		double var2 = pop(stack,counter);
+		push(stack, (var2-var1), counter);
+		return;
+	}
 
-    if ( strcmp(line,"*") == 0)
-    {
-	double var1 = pop(stack,counter);
-	double var2 = pop(stack,counter);
-	push(stack, (var1 * var2), counter);
-	return;
-    }
-
-    if ( strcmp(line,"/") == 0)
-    {
-	double var1 = pop(stack,counter);
-	double var2 = pop(stack,counter);
-	push(stack, (var2/var1), counter);
-	return;
-    }
-
-    if ( strcmp(line,"^") == 0)
-    {
-	double var1 = pop(stack,counter);
-	double var2 = pop(stack,counter);
-	double exp = pow(var2,var1);
-	push(stack, exp, counter);
-	return;
-    }
-
-    if ( strcmp(line,"mod") == 0)
-    {
-	double var1 = pop(stack,counter);
-	double var2 = pop(stack,counter);
-	double mod = fmod(var2, var1);
-	push(stack, mod, counter);
-	return;
-    }
-
-     if(strcmp(line, "xchg") == 0)
-    {
-	double var1 = pop(stack, counter);
-	double var2 = pop(stack, counter);
-	push(stack, var1, counter);
-	push(stack, var2, counter);
-	return;
-    }
+	if ( strcmp(line,"*") == 0)
+	{
+		double var1 = pop(stack,counter);
+		double var2 = pop(stack,counter);
+		push(stack, (var1 * var2), counter);
+		return;
+	}
+	
+	if ( strcmp(line,"/") == 0)
+	{
+		double var1 = pop(stack,counter);
+		double var2 = pop(stack,counter);
+		push(stack, (var2/var1), counter);
+		return;
+	}
+	
+	if ( strcmp(line,"^") == 0)
+	{
+		double var1 = pop(stack,counter);
+		double var2 = pop(stack,counter);
+		double exp = pow(var2,var1);
+		push(stack, exp, counter);
+		return;
+	}
+	
+	if ( strcmp(line,"mod") == 0)
+	{
+		double var1 = pop(stack,counter);
+		double var2 = pop(stack,counter);
+		double mod = fmod(var2, var1);
+		push(stack, mod, counter);
+		return;
+	}
+	
+	if(strcmp(line, "xchg") == 0)
+	{
+		double var1 = pop(stack, counter);
+		double var2 = pop(stack, counter);
+		push(stack, var1, counter);
+		push(stack, var2, counter);
+		return;
+	}
 }
     if((*counter) >= 1)
     {
